@@ -1,31 +1,36 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext.tsx";
 import styles from "./Header.module.css";
 
 export function Header() {
+  const { user, logout } = useAuth();
+
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <NavLink to="/" className={styles.logo} end>
+        <Link to="/" className={styles.logo}>
           <span className={styles.logoMark} aria-hidden="true">
             BB
           </span>
           BorrowBlock
-        </NavLink>
+        </Link>
 
         <nav className={styles.nav} aria-label="Main">
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}
-            end
-          >
+          <Link to="/" className={styles.navLink}>
             Browse
-          </NavLink>
-          <NavLink
-            to="/auth"
-            className={({ isActive }) => (isActive ? styles.navLinkActive : styles.navLink)}
-          >
-            Sign in
-          </NavLink>
+          </Link>
+          {user ? (
+            <>
+              <span className={styles.userGreeting}>Hi, {user.displayName.split(" ")[0]}</span>
+              <button type="button" className={styles.logoutButton} onClick={logout}>
+                Sign out
+              </button>
+            </>
+          ) : (
+            <Link to="/auth" className={styles.navLink}>
+              Sign in
+            </Link>
+          )}
         </nav>
       </div>
     </header>

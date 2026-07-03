@@ -62,3 +62,20 @@ export interface BookingDraft {
   /** null until the user has agreed to the owner's terms. */
   agreedToTerms: boolean;
 }
+
+/** Mock session user — not part of the API contract, but typed for the auth layer. */
+export interface SessionUser {
+  id: UserId;
+  email: string;
+  displayName: string;
+}
+
+/** Returned after a successful booking submission. */
+export interface BookingConfirmation {
+  id: string;
+  itemId: ItemId;
+  itemTitle: string;
+  range: AvailabilityRange;
+  totalCents: number;
+  createdISO: string;
+}

@@ -1,0 +1,70 @@
+.steps {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.stepActive {
+  composes: step;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.stepDone {
+  composes: step;
+  color: var(--color-text);
+}
+
+.stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.stepNumberActive {
+  composes: stepNumber;
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: white;
+}
+
+.stepNumberDone {
+  composes: stepNumber;
+  border-color: var(--color-primary);
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+
+.divider {
+  flex: 1;
+  height: 2px;
+  background: var(--color-border);
+  max-width: 3rem;
+}
+
+.dividerDone {
+  composes: divider;
+  background: var(--color-primary-subtle);
+}
+
+@media (max-width: 480px) {
+  .stepLabel {
+    display: none;
+  }
+}

@@ -76,3 +76,24 @@
   background: var(--color-primary-subtle);
   color: var(--color-primary);
 }
+
+.userGreeting {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  padding: 0 var(--space-sm);
+}
+
+.logoutButton {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.logoutButton:hover {
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+}
