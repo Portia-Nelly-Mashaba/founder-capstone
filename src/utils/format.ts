@@ -1,4 +1,4 @@
-import type { Category, Item, Price } from "../data/types.ts";
+import type { Category, Item, Owner, Price } from "../data/types.ts";
 
 const CATEGORY_LABELS: Record<Category, string> = {
   "power-tools": "Power tools",
@@ -58,4 +58,19 @@ export function isRecentlyListed(postedISO: string, now: Date = new Date()): boo
 
 export function isBrowsable(item: Item): boolean {
   return item.status !== "removed";
+}
+
+export function formatOwnerRating(owner: Owner): string {
+  if (owner.rating === null || owner.ratingCount === 0) {
+    return "New lender";
+  }
+  return `${owner.rating.toFixed(1)} (${owner.ratingCount} ${owner.ratingCount === 1 ? "review" : "reviews"})`;
+}
+
+export function formatPostedDate(postedISO: string): string {
+  return new Date(postedISO).toLocaleDateString("en-ZA", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 }
