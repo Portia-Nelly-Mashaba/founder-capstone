@@ -27,3 +27,9 @@ At least 8 real entries. Generic entries score nothing. Use this shape:
 ---
 
 ## Decision: (3)
+- Context: Browse needs search and filters with only mock data and no backend this sprint.
+- Options I considered: (1) Client-side filter on the fetched array — simple, instant feedback, easy to swap for server params later. (2) Fake API query function that accepts filter params and filters inside `fetchItems` — closer to real API shape but more indirection for the same result. (3) URL search params as source of truth — shareable filter state, more routing complexity than needed for v1.
+- What I chose and why: Client-side filtering in a pure `filterItems()` utility with filter state in `BrowsePage`. The function is typed, testable, and mirrors what a future `GET /items?category=&maxDistance=` would do — only the call site changes when a backend arrives.
+- What I gave up: Shareable filtered URLs and server-side pagination. Fine for ~dozens of neighbourhood listings in a prototype.
+
+---
