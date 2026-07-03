@@ -1,0 +1,36 @@
+:root {
+  /* BorrowBlock — warm, neighbourhood, trustworthy */
+  --color-bg: #faf8f5;
+  --color-surface: #ffffff;
+  --color-surface-raised: #f3efe8;
+  --color-border: #e2dcd2;
+  --color-text: #1c1917;
+  --color-text-muted: #6b6560;
+  --color-primary: #2d6a4f;
+  --color-primary-hover: #1b4332;
+  --color-primary-subtle: #d8f3dc;
+  --color-accent: #bc6c25;
+  --color-accent-subtle: #fef3e2;
+  --color-danger: #9b2226;
+  --color-focus-ring: #40916c;
+
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 1px 2px rgb(28 25 23 / 0.06);
+  --shadow-md: 0 4px 12px rgb(28 25 23 / 0.08);
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  --max-width: 72rem;
+  --header-height: 4rem;
+}
